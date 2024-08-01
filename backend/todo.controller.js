@@ -93,8 +93,7 @@ const completeTodo = async(req, res) => {
         
         return res.status(200).json({
             success: true,
-            isCompleted: updatedTodo.completed, 
-            message: "Done"
+            isCompleted: updatedTodo.completed
         })
 
     } catch (error) {

@@ -3,7 +3,7 @@ import './App.css'
 import TodoForm from './components/TodoForm'
 import TodoItem from './components/TodoItem'
 import axios from 'axios'
-import  {Toaster} from 'react-hot-toast'
+import  toast, {Toaster} from 'react-hot-toast'
 
 function App() {
   const [todos, setTodos] = useState([])
@@ -23,6 +23,7 @@ function App() {
         console.error('Failed to fetch todos');
       }
     } catch (error) {
+      toast.error("Something went wrong")
       console.error('Error fetching todos:', error);
     }
   };

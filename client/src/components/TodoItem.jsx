@@ -14,7 +14,10 @@ function TodoItem({ todo, fetchTodo }) {
             })
 
             if(response.data.success) {
-                toast.success(response.data.message)
+                if(response.data.isCompleted)
+                    toast.success("Done")
+                else    
+                    toast.error("Undone")
             }
             else {
                 toast.error(response.data.message)
